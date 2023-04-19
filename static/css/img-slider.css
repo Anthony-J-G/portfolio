@@ -1,0 +1,126 @@
+
+
+#img-slider-container {
+  position: fixed;
+  top:      66vmin;
+  left:     0;
+  width:    100vmin;
+  height:   30vmin;
+
+}
+
+
+.noselect {
+  -webkit-touch-callout:  none; /* iOS Safari */
+  -webkit-user-select:    none; /* Safari */
+  -khtml-user-select:     none; /* Konqueror HTML */
+  -moz-user-select:       none; /* Old versions of Firefox */
+  -ms-user-select:        none; /* Internet Explorer/Edge */
+  user-select:            none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+
+}
+
+
+.blur-sm {
+  filter: blur(1px);
+  transition: filter 0.5s ease;
+}
+.blur-sm:hover {
+  filter: none;
+}
+
+
+.blur-md {
+  filter: blur(3px);
+  transition: filter 0.5s ease;
+}
+.blur-md:hover {
+  filter: none;
+}
+
+
+.blur-lg {
+  filter: blur(6px);
+  transition: filter 0.5s ease;
+}
+.blur-lg:hover {
+  filter: none;
+}
+
+
+.blur-sm {
+  filter: blur(1px);
+  transition: filter 0.5s ease;
+}
+.blur-sm:hover {
+  filter: none;
+}
+
+
+.blur-md {
+  filter: blur(3px);
+  transition: filter 0.5s ease;
+}
+.blur-md:hover {
+  filter: none;
+}
+
+
+.blur-lg {
+  filter: blur(6px);
+  transition: filter 0.5s ease;
+}
+.blur-lg:hover {
+  filter: none;
+}
+
+
+.scale-quiet {
+  transition: transform 0.2s ease-in-out;
+}
+.scale-quiet:hover {
+  z-index: 999;
+  transform: scale(0.9);
+}
+
+.scale-regular {
+  transition: transform 0.2s ease-in-out;
+}
+.scale-regular:hover {
+  z-index: 999;
+  transform: scale(1.2);
+}
+
+
+.scale-loud {
+  transition: transform 0.2s ease-in-out;
+}
+.scale-loud:hover {
+  z-index:    999;
+  transform:  scale(1.5);
+}
+
+
+#im-track > .image {
+  display:          flex;
+  width:            30vmin;
+  height:           40vmin;
+  object-fit:       cover;
+  object-position:  center;
+}
+
+#im-track > .image:hover {
+  cursor: pointer;
+}
+
+#im-track {
+  display:   flex;
+  width:     100vmin;
+  height:    100%;
+  gap:       4vmin;
+  left:      50%;
+  top:       50%;
+  transform: translate(-7%, -50%);
+}
+
