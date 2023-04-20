@@ -26,13 +26,13 @@ setInterval(function() {
     cmd_entry = `<h1 class="title-other">${cmd_builder}</h1>`
 
     title.innerHTML = `${title_prefix}<h1> </h1>${cmd_entry}${cmd_cursor}`
-
+    console.log(cmd_builder);
     if (cmd_builder === fake_commands[j]) {
         is_typing = false
         j = (j + 1) % fake_commands.length
     }
 
-}, 300);
+}, 100);
 
 
 const min_delay = 15000;
