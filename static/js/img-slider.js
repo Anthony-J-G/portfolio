@@ -50,38 +50,3 @@ window.onmousemove = e => {
     
 
 }
-
-const widgetContainer = document.querySelector('.widget-container');
-let isDragging = false;
-let startX, startY, initialX, initialY;
-
-widgetContainer.addEventListener('mousedown', (e) => {
-  isDragging = true;
-
-  startX = e.clientX;
-  startY = e.clientY;
-
-  initialX = widgetContainer.offsetLeft;
-  initialY = widgetContainer.offsetTop;
-
-  widgetContainer.style.cursor = 'grabbing';
-});
-
-widgetContainer.addEventListener('mousemove', (e) => {
-  if (!isDragging) return;
-
-  const currentX = e.clientX - startX;
-  const currentY = e.clientY - startY;
-
-  widgetContainer.style.left = `${initialX + currentX}px`;
-  widgetContainer.style.top = `${initialY + currentY}px`;
-
-  widgetContainer.style.cursor = 'grabbing';
-});
-
-widgetContainer.addEventListener('mouseup', () => {
-  isDragging = false;
-
-  widgetContainer.style.cursor = 'grab';
-});
-
