@@ -8,19 +8,52 @@ const slide_speed = -700;
 
 var is_down = false;
 
-// Mouse Down Event
-window.onmousedown = e => {
-    is_down = true;
-    container.style.cursor = "grabbing"
-    track.dataset.mouseDownAt = e.clientX;
+// Add event listeners for both touch and mouse events
+container.addEventListener('mousedown', handleBeginInteract);
+container.addEventListener('touchstart', handleBeginInteract);
+
+container.addEventListener('mouseup', handleEndInteract);
+container.addEventListener('touchstart', handleEndInteract);
+
+
+// Define the event handler function
+// Mouse/Tap Down Event
+function handleBeginInteract(event) {
+  // Prevent the default behavior for the event
+  event.preventDefault();
+
+  // Determine the type of event (touch or mouse)
+  var event_type = event.type == 'touchstart' ? 'touch' : 'mouse';
+
+  // Get the position of the event relative to the element
+  var x_pos = event_type == 'touch' ? event.touches[0].clientX : event.clientX;
+
+  is_down = true;
+  container.style.cursor = "grabbing"
+  track.dataset.mouseDownAt = x_pos
+  console.log(x_pos)
 }
+
+
+// Mouse/Tap Down Event
+function handleEndInteract(event) {
+  // Prevent the default behavior for the event
+  event.preventDefault();
+
+  // Determine the type of event (touch or mouse)
+  var event_type = event.type == 'touchstart' ? 'touch' : 'mouse';
+
+  is_down = false;
+  track.dataset.mouseDownAt = "0";
+  track.dataset.prevPercentage = track.dataset.percentage;
+  container.style.cursor = "grab"
+}
+
+
 
 // Mouse Up Event
 window.onmouseup = e => {
-    is_down = false;
-    track.dataset.mouseDownAt = "0";
-    track.dataset.prevPercentage = track.dataset.percentage;
-    container.style.cursor = "grab"
+
 }
 
 // Mouse Move Event
