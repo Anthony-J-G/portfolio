@@ -32,7 +32,7 @@ setInterval(function() {
         j = (j + 1) % fake_commands.length
     }
 
-}, 100);
+}, 300);
 
 
 const min_delay = 15000;
