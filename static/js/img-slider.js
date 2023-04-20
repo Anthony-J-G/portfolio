@@ -1,14 +1,17 @@
-// DEBUG STUFF **REMOVE ME WHEN FUNCTIONAL**
-
-
-
 const track = document.getElementById("im-track");
+const container = document.getElementById("img-slider-container")
 const body = document.getElementsByTagName("body");
+
+const min_slide = 500;
+const max_slide = -1800;
+const slide_speed = -700;
+
 var is_down = false;
 
 // Mouse Down Event
 window.onmousedown = e => {
     is_down = true;
+    container.style.cursor = "grabbing"
     track.dataset.mouseDownAt = e.clientX;
 }
 
@@ -17,7 +20,7 @@ window.onmouseup = e => {
     is_down = false;
     track.dataset.mouseDownAt = "0";
     track.dataset.prevPercentage = track.dataset.percentage;
-
+    container.style.cursor = "grab"
 }
 
 // Mouse Move Event
@@ -26,30 +29,59 @@ window.onmousemove = e => {
 
     // Calculate the distance the mouse has moved since being clicked
     const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
-    const maxDelta = window.innerWidth / 2;
+    const maxDelta = (window.innerWidth) / 2;
 
-    const percentage = (mouseDelta / maxDelta) * -100;
+    const percentage = (mouseDelta / maxDelta) * slide_speed;
 
     // Calculate how much total distance the cursor should have moved
     var nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
 
     // Clamp from 0 to -100
-    nextPercentage = Math.min(nextPercentage, 0);
-    nextPercentage = Math.max(nextPercentage, -100);
+    nextPercentage = Math.min(nextPercentage, min_slide);
+    nextPercentage = Math.max(nextPercentage, max_slide);
 
     track.dataset.percentage = nextPercentage;
-
+    
     // Run animation for slider panning
     track.animate(
         { transform: `translate(${nextPercentage}%, -50%)` },
         { duration: 1200, fill: "forwards" }
     );
     
-    // Run animations for image parallaxes
-    for(const image of track.getElementsByClassName("image")) {
-        image.animate(
-            { objectPosition: `${100 + nextPercentage}% center` },
-            { duration: 1200, fill: "forwards" } 
-        )
-    }
+
 }
+
+const widgetContainer = document.querySelector('.widget-container');
+let isDragging = false;
+let startX, startY, initialX, initialY;
+
+widgetContainer.addEventListener('mousedown', (e) => {
+  isDragging = true;
+
+  startX = e.clientX;
+  startY = e.clientY;
+
+  initialX = widgetContainer.offsetLeft;
+  initialY = widgetContainer.offsetTop;
+
+  widgetContainer.style.cursor = 'grabbing';
+});
+
+widgetContainer.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+
+  const currentX = e.clientX - startX;
+  const currentY = e.clientY - startY;
+
+  widgetContainer.style.left = `${initialX + currentX}px`;
+  widgetContainer.style.top = `${initialY + currentY}px`;
+
+  widgetContainer.style.cursor = 'grabbing';
+});
+
+widgetContainer.addEventListener('mouseup', () => {
+  isDragging = false;
+
+  widgetContainer.style.cursor = 'grab';
+});
+
