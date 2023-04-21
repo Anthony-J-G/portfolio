@@ -7,7 +7,7 @@ const t_dir =  `<h1 class="title-dir">~</h1>`
 
 const title_prefix = `${t_name}${t_desc}<h1 class="title-other">:</h1>${t_dir}<h1 class="title-other">$</h1>`
 
-const fake_commands = ["cd s_nutz", "mkdir new_project", "ctr-alt-del", "cmake .."]
+const fake_commands = ["cd s_nutz", "mkdir new_project", "ctrl-alt-del", "cmake .."]
 const fc_len = fake_commands.length
 var i = 0
 
@@ -26,7 +26,7 @@ setInterval(function() {
     cmd_entry = `<h1 class="title-other">${cmd_builder}</h1>`
 
     title.innerHTML = `${title_prefix}<h1> </h1>${cmd_entry}${cmd_cursor}`
-    
+
     if (cmd_builder === fake_commands[j]) {
         is_typing = false
         j = (j + 1) % fake_commands.length

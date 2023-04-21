@@ -13,7 +13,7 @@ container.addEventListener('mousedown', handleBeginInteract);
 container.addEventListener('touchstart', handleBeginInteract);
 
 container.addEventListener('mouseup', handleEndInteract);
-container.addEventListener('touchstart', handleEndInteract);
+container.addEventListener('touchend', handleEndInteract);
 
 
 // Define the event handler function
@@ -47,13 +47,6 @@ function handleEndInteract(event) {
   track.dataset.mouseDownAt = "0";
   track.dataset.prevPercentage = track.dataset.percentage;
   container.style.cursor = "grab"
-}
-
-
-
-// Mouse Up Event
-window.onmouseup = e => {
-
 }
 
 // Mouse Move Event
