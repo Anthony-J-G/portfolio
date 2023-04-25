@@ -2,7 +2,7 @@ const track = document.getElementById("im-track");
 const container = document.getElementById("img-slider-container")
 const body = document.getElementsByTagName("body");
 
-const min_slide = 500;
+const min_slide = 600;
 const max_slide = -1800;
 const slide_speed = -700;
 
@@ -14,6 +14,12 @@ container.addEventListener('touchstart', handleBeginInteract);
 
 container.addEventListener('mouseup', handleEndInteract);
 container.addEventListener('touchend', handleEndInteract);
+
+
+
+
+
+
 
 
 // Define the event handler function
@@ -76,3 +82,20 @@ window.onmousemove = e => {
     
 
 }
+
+const myDiv = document.getElementById("img-slider-container");
+let timer;
+
+// function to be called when the mouse stops moving
+function stopMoving() {
+    myDiv.style.borderBottom = "1vh solid rgba(119, 92, 92, 0.344); /* example border, change as needed */";
+  }
+  
+  // function to be called when the mouse is moving
+  function moving() {
+    clearTimeout(timer); // clear the previous timer if there is one
+    myDiv.style.borderBottom = "1vh solid rgba(0, 0, 0, 0.344); /* example border, change as needed */";
+    timer = setTimeout(stopMoving, 2000); // set a new timer for 2 seconds
+  }
+  
+  myDiv.addEventListener("mousemove", moving);

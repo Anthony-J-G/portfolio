@@ -7,7 +7,7 @@ const t_dir =  `<h1 class="title-dir">~</h1>`
 
 const title_prefix = `${t_name}${t_desc}<h1 class="title-other">:</h1>${t_dir}<h1 class="title-other">$</h1>`
 
-const fake_commands = ["cd s_nutz", "mkdir new_project", "ctrl-alt-del", "cmake .."]
+const fake_commands = ["cd /software-developer/c++", "cd /software-developer/js", "ctrl-alt-del", "cmake ..", "cd /world-building"]
 const fc_len = fake_commands.length
 var i = 0
 
@@ -16,6 +16,7 @@ var cmd_entry = `<h1 class="title-other"> </h1>`
 var cmd_cursor = ""
 var cmd_builder = ""
 var is_typing = true;
+
 
 j = 0
 setInterval(function() {
