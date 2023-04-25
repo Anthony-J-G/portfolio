@@ -50,6 +50,11 @@ function windowWasResized() {
 
 window.addEventListener('resize', windowWasResized)
 
+IMGS.forEach(image => {
+    
+    
+});
+
 
 
 // Cycle through images
@@ -74,7 +79,6 @@ setInterval(function() {
     state.imgs_index = (state.imgs_index + 1) % NUM_IMGS;
     
 }, DELAY_PERIOD); // Interval time in milliseconds (1000ms = 1 second)
-
 
 var calcTranslate = function (img_index) {
     var midpoint = widthAttrs.W_VIEW / 2;
