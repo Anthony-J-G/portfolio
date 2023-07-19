@@ -23,7 +23,7 @@
   transform:    translate(50vw, -50%);
 }
 
-#im-track > .image {
+.project-summary > .image {
   display:          inline-block;
   width:            20vw;
   height:           40vh;
@@ -36,7 +36,7 @@
   transition:       transform 0.2s ease-in-out;
 }
 
-#im-track > .image:hover {
+.project-summary > .image:hover {
   cursor: pointer;
   filter: none;
   z-index: 999;
@@ -47,7 +47,7 @@
   cursor: grab;
 }
 
-#im-track > .image.active {
+.project-summary > .image.active {
   filter: none;
   z-index: 999;
   transform: scale(1.2);
