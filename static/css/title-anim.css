@@ -1,0 +1,37 @@
+
+
+#title-container {
+    position: fixed;
+    top: 6vh;
+    left: 12.5vw;
+    right: 0;
+    bottom: 12.5vh;
+    width: 75vmax;
+    height: 25vmin;
+    z-index: 100;
+}
+
+#title-container > h1 {
+    display: inline;
+    background-color: black;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 4.5vh;
+    line-height: 1.5;
+    
+}
+
+h1.title-name {
+    display: inline;
+    color: rgb(21, 180, 93);
+}
+h1.title-desc {
+    display: inline;
+    color: rgb(201, 7, 7);
+}
+h1.title-dir {
+    display: inline;
+    color: rgb(39, 58, 155);
+}
+h1.title-other {
+    color: white;
+}
