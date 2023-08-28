@@ -1,6 +1,6 @@
 <div class="layout-container">
     <div class="layout-title">
-        Anthony J. Guarino - Portfolio
+        Anthony J. Guarino - Portfolio ({{ index }})
     </div>
 
     <div class="projects-container">
@@ -12,6 +12,11 @@
             </div>
             <div class="project-title">
                 {{ currentProject.name }}
+            </div>
+            <div class="project-tags">
+                <div *ngFor="let tag of currentTags">
+                    <img src="{{ tag }}" alt="">
+                </div>
             </div>
         </div>
 

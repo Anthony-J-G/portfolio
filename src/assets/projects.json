@@ -29,7 +29,7 @@
         "toolkits": [
             "Unreal Engine",
             "C++",
-            "SQLite3"
+            "SQLite"
         ],
         "splash": {
             "path": "shot-by-cerqueira-0o_GEzyargo-unsplash-resize.jpg"
@@ -53,10 +53,10 @@
         "description": "Hair Shampoo with Aloe Vera.",
         "toolkits": [
             "C++",
-            "SQLite3"
+            "SQLite"
         ],
         "splash": {
-            "path": "SUCCS-splash-resize.jpg"
+            "path": "clint-bustrillos-X-A-LJVAhzk-unsplash-resize.jpg"
         }
     },
     {
@@ -65,8 +65,7 @@
         "description": "Well this is certainly very meta. This web app is the project!",
         "toolkits": [
             "Angular",
-            "TypeScript",
-            "HTML/CSS"
+            "TypeScript"
         ],
         "splash": {
             "path": "portfolio-splash-resize.jpg"
