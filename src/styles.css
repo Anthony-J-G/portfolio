@@ -2,4 +2,7 @@
 html {
     background-color: #0C0C0C;
     font-size: 1vh;
+    user-select: none;
+    margin: 0rem;
+    overflow: hidden;
 }

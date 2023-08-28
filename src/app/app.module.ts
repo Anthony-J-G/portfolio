@@ -3,16 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProjectsComponent } from './terminal/projects/projects.component';
 import { TerminalComponent } from './terminal/terminal.component';
-import { DisplayTextComponent } from './terminal/display-text/display-text.component';
+import { StdoutComponent } from './terminal/stdout/stdout.component';
+import { LayoutComponent } from './terminal/layout/layout.component';
+import { ProjectSelectComponent } from './terminal/project-select/project-select.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectsComponent,
     TerminalComponent,
-    DisplayTextComponent
+    StdoutComponent,
+    LayoutComponent,
+    ProjectSelectComponent,
   ],
   imports: [
     BrowserModule,

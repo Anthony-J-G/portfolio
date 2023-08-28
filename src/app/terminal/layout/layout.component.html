@@ -1,0 +1,21 @@
+<div class="layout-container">
+    <div class="layout-title">
+        Anthony J. Guarino - Portfolio
+    </div>
+
+    <div class="projects-container">
+        <div class="projects-select" id="ps-prev" (click)="onSelect(-1)" ><</div>
+
+        <div class="projects-display">
+            <div class="image-container">
+                <img src="{{ SPLASH_PATH }}{{ currentProject.splash.path }}" alt="{{ currentProject.name }}">
+            </div>
+            <div class="project-title">
+                {{ currentProject.name }}
+            </div>
+        </div>
+
+        <div class="projects-select" id="ps-next" (click)="onSelect( 1)">></div>
+    </div>
+
+</div>
