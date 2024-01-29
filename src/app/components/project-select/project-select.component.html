@@ -1,0 +1,23 @@
+<div class="projects-container">
+    <div class="projects-select" id="ps-prev" (click)="onSelect(-1)" ><</div>
+
+    <div class="projects-display" 
+        (mouseenter)="onMouseEnter()" 
+        (mouseleave)="onMouseLeave()" 
+        (click)="onClick()"
+    >
+        <div class="image-container">
+            <img src="{{ SPLASH_PATH }}{{ currentProject.splash.path }}" alt="{{ currentProject.name }}">
+        </div>
+        <div class="project-title" [ngClass]="{'isHovered': getHovered()}">
+            {{ currentProject.name }}
+        </div>
+        <div class="project-tags">
+            <div *ngFor="let tag of currentTags">
+                <img src="{{ tag }}" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="projects-select" id="ps-next" (click)="onSelect(1)">></div>
+</div>

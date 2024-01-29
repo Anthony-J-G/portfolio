@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ViewContainerRef, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ViewContainerRef, ElementRef, Input } from '@angular/core';
 import { LayoutComponent } from './layout/layout.component';
 
 
@@ -9,7 +9,7 @@ import { LayoutComponent } from './layout/layout.component';
 })
 export class TerminalComponent implements AfterViewInit {
   @ViewChild('terminalBorder') TerminalContainer!: ElementRef;
-  terminalOpen: boolean = true;
+  @Input() terminalOpen?: boolean;
 
   lerp(start: number, end: number, time: number): number {
     return start * (1.0 - time) + (end * time);
