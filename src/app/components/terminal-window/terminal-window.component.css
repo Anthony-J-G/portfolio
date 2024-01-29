@@ -1,5 +1,5 @@
 :host {
-    --primary-rgb: #076502;
+    --primary-rgb: #0765027d;
     box-sizing: border-box;
 }
 
@@ -87,7 +87,7 @@
     height: 100%;
     width: 100%;
 
-    animation: pan-overlay 10s infinite linear;
+    animation: pan-overlay 17s infinite linear;
 
 }
 
