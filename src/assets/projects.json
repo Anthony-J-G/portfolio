@@ -56,7 +56,7 @@
             "SQLite"
         ],
         "splash": {
-            "path": "clint-bustrillos-X-A-LJVAhzk-unsplash-resize.jpg"
+            "path": "SUCCS-splash-resize.jpg"
         }
     },
     {
@@ -65,7 +65,8 @@
         "description": "Well this is certainly very meta. This web app is the project!",
         "toolkits": [
             "Angular",
-            "TypeScript"
+            "TypeScript",
+            "HTML/CSS"
         ],
         "splash": {
             "path": "portfolio-splash-resize.jpg"
